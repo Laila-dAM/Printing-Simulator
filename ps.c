@@ -40,3 +40,10 @@ void addJob(struct PrintQueue *queue, const char *fileName){
     }
     printf("Job '%s' added to the print queue with ID %d.\n", fileName, newJob->id);
 }
+
+void listQueue(struct PrintQueue *queue){
+    if(queue->start == NULL){
+        printf("The print queue is empty.\n");
+        return;
+    }
+}
