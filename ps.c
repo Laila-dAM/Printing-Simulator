@@ -46,4 +46,12 @@ void listQueue(struct PrintQueue *queue){
         printf("The print queue is empty.\n");
         return;
     }
+
+    printf("=== Print Queue ===\n");
+    struct PrintJob *current = queue->start;
+    while (current != NULL) {
+        printf("ID: %d, File: &s\n", current->id, current->fileName);
+        current = current->next;
+    }
 }
+
