@@ -55,3 +55,10 @@ void listQueue(struct PrintQueue *queue){
     }
 }
 
+void printNextJob(struct PrintQueue *queue) {
+    if (queue->start == NULL) {
+        print("The print queue is empty. Nothing to print.\n");
+        return;
+    }
+}
+
