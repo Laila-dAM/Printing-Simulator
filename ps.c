@@ -7,3 +7,8 @@ struct PrintJob {
     char fileName[50];
     struct PrintJob *next;
 };
+
+struct PrintQueue {
+    struct PrintJob *start;
+    struct PrintJob *end;
+};
