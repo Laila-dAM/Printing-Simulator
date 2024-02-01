@@ -12,3 +12,8 @@ struct PrintQueue {
     struct PrintJob *start;
     struct PrintJob *end;
 };
+
+void initializeQueue(struct PrintQueue *queue) {
+    queue->start = NULL;
+    queue->end = NULL;
+}
