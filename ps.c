@@ -77,3 +77,13 @@ void freeQueue(struct PrintQueue *queue) {
 
     queue->end = NULL;
 }
+
+int main(){
+    setlocale(LC_ALL,"en_US");
+
+    struct PrintQueue queue;
+    initializeQueue(&queue);
+
+    int choice;
+    char fileName[50];
+}
