@@ -24,4 +24,19 @@ void addJob(struct PrintQueue *queue, const char *fileName){
         perror("Error allocating memory for print job");
         exit(EXIT_FAILURE);
     }
+
+    newJob->id = rand();
+    snprint(newJob->fileName, sizeof(newJob->fileName), "%s", fileName);
+    newJob->next = NULL;
+
+    if (queue->end == NULL){
+        queue->start = newJob;
+        queue->end = newJob;
+    }
+
+    else{
+        queue->end->next = newJob;
+        queue->end = newJob;
+    }
+    printf("Job '%s' added to the print queue with ID %d.\n", fileName, newJob->id);
 }
