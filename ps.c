@@ -68,3 +68,12 @@ void printNextJob(struct PrintQueue *queue) {
     free(nextJob);
 }
 
+void freeQueue(struct PrintQueue *queue) {
+    while(queue->start != NULL){
+        struct PrintJob *temp = queue->start;
+        queue->start = queue->start->next;
+        free(temp);
+    }
+
+    queue->end = NULL;
+}
