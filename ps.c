@@ -86,4 +86,40 @@ int main(){
 
     int choice;
     char fileName[50];
+
+    do {
+        printf("\n === Print Queue Simulator === \n");
+        printf("1. Add print job\n");
+        printf("2. List jobs in the print queue\n");
+        printf("3. Print next job\n");
+        printf("0. Exit\n");
+
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+            printf("Enter the file name:");
+            scanf("%s", fileName);
+            addJob(&queue, fileName);
+            break;
+
+            case 2:
+            listQueue(&queue);
+            break;
+
+            case 3:
+            printNextJob(&queue);
+            break;
+
+            case 0:
+            printf("=== Existing the Print Queue Simulator ===\n");
+            break;
+
+            default:
+            printf("Invalid option. Please try again\n");
+    
+        }
+    }
+
+    
 }
