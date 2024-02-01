@@ -60,5 +60,11 @@ void printNextJob(struct PrintQueue *queue) {
         print("The print queue is empty. Nothing to print.\n");
         return;
     }
+
+    struct PrintJob *nextJob = queue->start;
+    queue->start = queue->start->next;
+
+    printf("Printing job with ID %d: %s\n", nextJob->id, nextJob->fileName);
+    free(nextJob);
 }
 
